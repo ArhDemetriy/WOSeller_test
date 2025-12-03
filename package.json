@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "bun --hot index.ts",
-    "build": "bun run scss:build && bun build ./src/index.html --outdir ./dist --minify && cp -r src/images dist/images",
+    "build": "bun run scss:build && bun build ./src/index.html --outdir ./dist --minify && cp -r public/* dist/",
     "preview": "bun run build && bunx serve dist",
     "lint": "eslint . && stylelint \"**/*.scss\" && htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
     "lint:fix": "eslint . --fix && stylelint \"**/*.scss\" --fix",
