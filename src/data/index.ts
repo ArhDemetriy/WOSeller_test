@@ -51,9 +51,12 @@ const buttonsPromise = (async () => {
   return buttons;
 });
 
-export async function getFilteredCourses<T extends ButtonTag>(fromTag: T, search?: string) {
+export async function getFilteredCourses<T extends ButtonTag>(
+  fromTag: T,
+  search?: string
+): Promise<NonNullable<Awaited<typeof buttonsPromise>[T]>['courses']> {
   const buttons = await buttonsPromise;
-  const courses: NonNullable<(typeof buttons)[T]>['courses'] = buttons[fromTag]?.courses ?? [];
+  const courses = buttons[fromTag]?.courses ?? [];
   if (!search) return courses;
 
   const lowerSearch = search.toLowerCase();
