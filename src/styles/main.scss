@@ -4,7 +4,7 @@
 
 // Page layout
 .page {
-  max-width: 1320px;
+  max-width: 1230px;
   margin: 0 auto;
   padding: 60px 24px;
 
@@ -178,6 +178,101 @@
     .tab__count {
       color: $color-primary;
     }
+  }
+}
+
+// Course card
+.card {
+  background: $color-white;
+  border: 1px solid $color-gray-300;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 4px 4px -4px rgba(30, 33, 44, 0.03),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 80px 80px -20px rgba(154, 156, 165, 0.08);
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 390 / 240;
+    object-fit: cover;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  &__badge {
+    align-self: flex-start;
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-family: $font-family-base;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $color-white;
+
+    // Badge color modifiers
+    &--marketing {
+      background: $color-badge-marketing;
+    }
+
+    &--management {
+      background: $color-badge-management;
+    }
+
+    &--hr {
+      background: $color-badge-hr;
+    }
+
+    &--design {
+      background: $color-badge-design;
+    }
+
+    &--development {
+      background: $color-badge-development;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: $font-family-base;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $color-gray-900;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__price {
+    font-family: $font-family-base;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $color-danger;
+  }
+
+  &__divider {
+    width: 1px;
+    height: 16px;
+    background: $color-gray-700;
+  }
+
+  &__author {
+    font-family: $font-family-base;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color-gray-700;
   }
 }
 

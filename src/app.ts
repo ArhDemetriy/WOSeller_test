@@ -10,14 +10,53 @@ const tagLabels: Record<string, string> = {
   development: 'Development',
 };
 
+// Элементы DOM
+const tabsContainer = document.querySelector('.tabs')!;
+const gridContainer = document.querySelector('.grid')!;
+const tabTemplate = document.getElementById('tab-template') as HTMLTemplateElement;
+const cardTemplate = document.getElementById('card-template') as HTMLTemplateElement;
+
+// Генерация карточек курсов
+async function renderCards() {
+  const courses = await getFilteredCourses(getActiveTag());
+
+  // Очищаем контейнер
+  gridContainer.innerHTML = '';
+
+  for (const course of courses) {
+    const clone = cardTemplate.content.cloneNode(true) as DocumentFragment;
+    const card = clone.querySelector('.card')!;
+
+    // Изображение
+    const image = card.querySelector('.card__image') as HTMLImageElement;
+    image.src = course.image.src;
+    image.alt = course.image.alt;
+
+    // Бейдж с модификатором категории
+    const badge = card.querySelector('.card__badge')!;
+    badge.textContent = tagLabels[course.tag] ?? course.tag;
+    badge.classList.add(`card__badge--${course.tag}`);
+
+    // Заголовок
+    card.querySelector('.card__title')!.textContent = course.title;
+
+    // Цена
+    card.querySelector('.card__price')!.textContent = course.price;
+
+    // Автор
+    card.querySelector('.card__author')!.textContent = course.description;
+
+    gridContainer.appendChild(clone);
+  }
+}
+
+// Генерация табов
 async function renderTabs() {
-  const template = document.getElementById('tab-template') as HTMLTemplateElement;
-  const container = document.querySelector('.tabs')!;
   const tags = await getTags();
 
   for (const tag of tags) {
     const courses = await getFilteredCourses(tag);
-    const clone = template.content.cloneNode(true) as DocumentFragment;
+    const clone = tabTemplate.content.cloneNode(true) as DocumentFragment;
     const button = clone.querySelector('.tab')!;
 
     button.querySelector('.tab__label')!.textContent = tagLabels[tag] ?? tag;
@@ -29,14 +68,22 @@ async function renderTabs() {
 
     button.addEventListener('click', () => {
       // Убираем активный класс у всех
-      container.querySelectorAll('.tab').forEach((t: Element) => t.classList.remove('tab--active'));
+      tabsContainer.querySelectorAll('.tab').forEach((t: Element) => t.classList.remove('tab--active'));
       // Добавляем активный класс текущей
       button.classList.add('tab--active');
       setActiveTag(tag);
+      // Перерисовываем карточки
+      renderCards();
     });
 
-    container.appendChild(clone);
+    tabsContainer.appendChild(clone);
   }
 }
 
-renderTabs();
+// Инициализация
+async function init() {
+  await renderTabs();
+  await renderCards();
+}
+
+init();
