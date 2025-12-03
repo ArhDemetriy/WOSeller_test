@@ -1,0 +1,39 @@
+{
+  "name": "woseller_test",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "build": "bun run scss:build && bun build ./src/index.html --outdir ./dist --minify",
+    "preview": "bun run build && bunx serve dist",
+    "lint": "eslint . && stylelint \"**/*.scss\" && htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.scss\" --fix",
+    "lint:ts": "eslint .",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:html": "htmlhint \"**/*.html\" --ignore \"node_modules/**\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "scss:watch": "sass --watch src/styles:src/styles --style=compressed",
+    "scss:build": "sass src/styles:src/styles --style=compressed"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^16.5.0",
+    "htmlhint": "^1.8.0",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
