@@ -14,9 +14,6 @@ type Course<T extends CourseTags = CourseTags> = Readonly<{
 }>;
 
 type ButtonTag = CourseTags | 'all';
-let activeTag: ButtonTag = 'all';
-export const getActiveTag = () => activeTag;
-export const setActiveTag = (tag: ButtonTag) => (activeTag = tag);
 
 const buttonsPromise = (async () => {
   try {
@@ -66,3 +63,8 @@ export async function getFilteredCourses<T extends ButtonTag>(
       c.description.toLowerCase().includes(lowerSearch)
   );
 }
+
+let activeTag: ButtonTag = 'all';
+export const getActiveTag = () => activeTag;
+export const setActiveTag = (tag: ButtonTag) => (activeTag = tag);
+export const getTags = () => buttonsPromise.then(buttons => Object.keys(buttons) as ButtonTag[]);

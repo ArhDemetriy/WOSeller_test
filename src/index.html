@@ -31,6 +31,34 @@
     <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
+    <main class="page">
+      <!-- Заголовок -->
+      <header class="page__header">
+        <p class="page__subtitle">Enjoy your studying!</p>
+        <h1 class="page__title">Our online courses</h1>
+      </header>
+
+      <!-- Фильтры: табы + поиск -->
+      <div class="filters">
+        <div class="filters__tabs tabs"></div>
+        <input class="filters__search" type="text" placeholder="Search course...">
+      </div>
+
+      <!-- Контейнер карточек -->
+      <div class="grid"></div>
+
+      <!-- Кнопка "Load more" -->
+      <button class="load-more" type="button">Load more</button>
+    </main>
+
+    <!-- Шаблон кнопки-таба -->
+    <template id="tab-template">
+      <button class="tab" type="button">
+        <span class="tab__label"></span>
+        <span class="tab__count"></span>
+      </button>
+    </template>
+
     <script type="module" src="./app.ts"></script>
   </body>
 </html>
