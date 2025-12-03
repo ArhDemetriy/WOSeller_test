@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "image": {
+      "src": "/images/courses/google-ads.jpg",
+      "alt": "Google Ads Training Course",
+      "title": "The Ultimate Google Ads Training Course"
+    },
+    "tag": "marketing",
+    "price": "$100",
+    "title": "The Ultimate Google Ads Training Course",
+    "description": "by Jerome Bell"
+  },
+  {
+    "id": 2,
+    "image": {
+      "src": "/images/courses/product-management.jpg",
+      "alt": "Product Management Fundamentals",
+      "title": "Product Management Fundamentals"
+    },
+    "tag": "management",
+    "price": "$480",
+    "title": "Product Management Fundamentals",
+    "description": "by Marvin McKinney"
+  },
+  {
+    "id": 3,
+    "image": {
+      "src": "/images/courses/hr-analytics.jpg",
+      "alt": "HR Management and Analytics",
+      "title": "HR Management and Analytics"
+    },
+    "tag": "hr",
+    "price": "$200",
+    "title": "HR Management and Analytics",
+    "description": "by Leslie Alexander Li"
+  },
+  {
+    "id": 4,
+    "image": {
+      "src": "/images/courses/brand-management.jpg",
+      "alt": "Brand Management & PR Communications",
+      "title": "Brand Management & PR Communications"
+    },
+    "tag": "marketing",
+    "price": "$530",
+    "title": "Brand Management & PR Communications",
+    "description": "by Kristin Watson"
+  },
+  {
+    "id": 5,
+    "image": {
+      "src": "/images/courses/graphic-design.jpg",
+      "alt": "Graphic Design Basic",
+      "title": "Graphic Design Basic"
+    },
+    "tag": "design",
+    "price": "$500",
+    "title": "Graphic Design Basic",
+    "description": "by Guy Hawkins"
+  },
+  {
+    "id": 6,
+    "image": {
+      "src": "/images/courses/business-development.jpg",
+      "alt": "Business Development Management",
+      "title": "Business Development Management"
+    },
+    "tag": "management",
+    "price": "$400",
+    "title": "Business Development Management",
+    "description": "by Dianne Russell"
+  },
+  {
+    "id": 7,
+    "image": {
+      "src": "/images/courses/highload-architecture.jpg",
+      "alt": "Highload Software Architecture",
+      "title": "Highload Software Architecture"
+    },
+    "tag": "development",
+    "price": "$600",
+    "title": "Highload Software Architecture",
+    "description": "by Brooklyn Simmons"
+  },
+  {
+    "id": 8,
+    "image": {
+      "src": "/images/courses/hr-recruitment.jpg",
+      "alt": "Human Resources – Selection and Recruitment",
+      "title": "Human Resources – Selection and Recruitment"
+    },
+    "tag": "hr",
+    "price": "$150",
+    "title": "Human Resources – Selection and Recruitment",
+    "description": "by Kathryn Murphy"
+  },
+  {
+    "id": 9,
+    "image": {
+      "src": "/images/courses/ux-design.jpg",
+      "alt": "User Experience. Human-centered Design",
+      "title": "User Experience. Human-centered Design"
+    },
+    "tag": "design",
+    "price": "$240",
+    "title": "User Experience. Human-centered Design",
+    "description": "by Cody Fisher"
+  }
+]
+
